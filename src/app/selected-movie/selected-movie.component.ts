@@ -12,19 +12,25 @@ import { ActivatedRoute } from '@angular/router';
 export class SelectedMovieComponent implements OnInit {
   public movies: Movie[];
   public selectedMovieYtid: string;
-  // public selectedMovieUrl: Url;
+  public selectedMovieUrl: Url;
+  public selectedMovieTitle: string;
+  public selectedMovieDescription: string;
 
   constructor(
     private readonly movieService: MovieService,
     private readonly activatedRoute: ActivatedRoute
   ) {}
 
-  // public updateSelectedMovieInfo(movie: Movie) {
-  //   this.selectedMovie = movie;
-  //   console.log(`YtId in Selected-Movie component: ${this.selectedMovie}`);
-  // }
-
   ngOnInit(): void {
     this.selectedMovieYtid = this.activatedRoute.snapshot.paramMap.get('id');
+    const movies$ = this.movieService.getMovies();
+    movies$.subscribe((movies) => {
+      movies.forEach((movie) => {
+        if (movie.ytid === this.selectedMovieYtid) {
+          this.selectedMovieTitle = movie.title;
+          this.selectedMovieUrl = movie.url;
+        }
+      });
+    });
   }
 }
