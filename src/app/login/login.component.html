@@ -1,0 +1,25 @@
+<hr class="my-4">
+<div class="container jumbotron">
+    <h2>Logged in: <b>{{loggedIn? "yes": "no"}}</b></h2>
+    <hr>
+    <form *ngIf="!loggedIn">
+        <fieldset>
+            <div class="form-group">
+                <label for="exampleInputEmail1">User Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+        </fieldset>
+
+        <button class="btn btn-primary" *ngIf="!loggedIn" (click)="login()">Log in</button>
+    </form>
+    <button class="btn btn-primary" *ngIf="loggedIn" (click)="logout()">Log out</button>
+</div>
+
+<div *ngIf="loggedIn" class="container jumbotron">
+    <app-admin></app-admin>
+</div>

@@ -17,6 +17,8 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieComponent } from './movie/movie.component';
 import { CategoriesListComponent } from './categories-list/categories-list.component';
 import { CategoryComponent } from './category/category.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { CategoryComponent } from './category/category.component';
     MovieComponent,
     CategoriesListComponent,
     CategoryComponent,
+    LoginComponent,
+    AdminComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

@@ -5,15 +5,13 @@
     </div>
     <nav class="main-nav">
         <a href="#home">Home</a>
-        <a href="movies">Movies</a>
-        <a href="movies/add">Manage Movies</a>
-        <a href="categories/add">Manage Categories</a>
+        <a [routerLink]="['movies']">Movies</a>
         <!-- <a href="#">Recently Added</a>
         <a target="_blank" href="https://codepen.io/cb2307/full/NzaOrm">Portfolio</a> -->
     </nav>
     <nav class="sub-nav">
         <a href="#"><i class="fas fa-search sub-nav-logo"></i></a>
-        <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
-        <a href="#">Admin Login</a>
+        <!-- <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a> -->
+        <a [routerLink]="['login']"><i class="far fa-user"></i></a>
     </nav>
 </div>
